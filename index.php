@@ -11,14 +11,24 @@
 //$publ = new \MyProject\Models\Articles\Article('Заголовок' , 'Текст', $author);
 
 //Автозагрузка классов
-function myAutoLoader(string $className){
-    var_dump($className);
-    require_once __DIR__ . '/src/' . str_replace('\\', '/' , $className) . '.php';
+//function myAutoLoader(string $className){
+//    var_dump($className);
+//    require_once __DIR__ . '/src/' . str_replace('\\', '/' , $className) . '.php';
+//}
+//spl_autoload_register('myAutoLoader');
+//
+//$author = new \MyProject\Models\Users\User('Иван');
+//$article = new \MyProject\Models\Articles\Article('Заголовок', 'Текст', $author);
+//
+//echo 'Привет' .PHP_EOL;
+//var_dump($article);
+spl_autoload_register(function (string $className){
+    require_once __DIR__ . '/src/' . $className  . '.php';
+});
+$controller = new \MyProject\Controllers\MainController();
+if(!empty($_GET['name'])){
+    $controller->sayHello($_GET['name']);
 }
-spl_autoload_register('myAutoLoader');
-
-$author = new \MyProject\Models\Users\User('Иван');
-$article = new \MyProject\Models\Articles\Article('Заголовок', 'Текст', $author);
-
-echo 'Привет' .PHP_EOL;
-var_dump($article);
+else{
+    $controller->main();
+}
