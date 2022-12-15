@@ -25,10 +25,36 @@
 spl_autoload_register(function (string $className){
     require_once __DIR__ . '/src/' . $className  . '.php';
 });
-$controller = new \MyProject\Controllers\MainController();
-if(!empty($_GET['name'])){
-    $controller->sayHello($_GET['name']);
+$route = $_GET['route'] ?? ' ';
+$pattern = '~^hello/(.*)~';
+preg_match($pattern, $route, $matches);
+if(!empty($matches)){
+    $controller = new \MyProject\Controllers\MainController();
+    $controller->sayHello($matches['1']);
+    return;
 }
-else{
+
+$pattern = '~^$~';
+preg_match($pattern, $route, $matches);
+
+if(empty($matches)){
+    $controller = new \MyProject\Controllers\MainController();
     $controller->main();
+    return;
 }
+echo 'Никакая страница не найдена';
+
+
+
+
+
+
+
+
+//$controller = new \MyProject\Controllers\MainController();
+//if(!empty($_GET['name'])){
+//    $controller->sayHello($_GET['name']);
+//}
+//else{
+//    $controller->main();
+//}
