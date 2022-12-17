@@ -12,4 +12,7 @@ class MainController
     public function sayHello(string $name){
         echo 'Привет ' . $name;
     }
+    public function sayBye(string $name){
+        echo 'До свидания ' . $name;
+    }
 }
