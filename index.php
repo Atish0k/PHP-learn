@@ -61,7 +61,7 @@ foreach ($routes as $pattern => $controllerAndAction){
     if(!empty($matches)){
         $isRouteFound = true;
         break;
-        
+
     }
 }
 if(!$isRouteFound){
