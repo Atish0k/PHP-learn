@@ -53,7 +53,7 @@ spl_autoload_register(function (string $className){
 });
 
 $route = $_GET['route'] ?? '';
-$routes = require __DIR__.'/src/routes.php';
+$routes = require __DIR__ . '/src/routes.php';
 
 $isRouteFound = false;
 foreach ($routes as $pattern => $controllerAndAction){
