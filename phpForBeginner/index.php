@@ -1,18 +1,21 @@
-<?php
-require __DIR__ . '/auth.php';
-$login = getUserLogin();
-?>
 <html>
 <head>
-    <title>Главная страница</title>
+    <title>Фотоальбом</title>
 </head>
 <body>
-<?php if ($login === null): ?>
-    <a href="/phpForBeginner/login.php">Авторизуйтесь</a>
-<?php else: ?>
-    Добро пожаловать, <?= $login ?>
-    <br>
-    <a href="/logout.php">Выйти</a>
-<?php endif; ?>
+
+<?php
+$files = scandir(__DIR__ . '/uploads');
+$links = [];
+foreach($files as $fileName){
+    if($fileName === '.' || $fileName === '..'){
+        continue;
+    }
+    $links [] = 'http://mylearn.loc/phpForBeginner/uploads/' . $fileName;
+}
+
+    foreach ($links as $link):?>
+        <a href = "<?= $link?>"><img src="<?= $link ?>"height="120px"></a>
+    <?php endforeach; ?>
 </body>
 </html>

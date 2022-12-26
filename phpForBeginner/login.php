@@ -8,7 +8,7 @@ if (!empty($_POST)) {
     if (checkAuth($login, $password)) {
         setcookie('login', $login, 0, '/');
         setcookie('password', $password, 0, '/');
-        header('Location: /index.php');
+        header('Location: /phpForBeginner/index.php');
     } else {
         $error = 'Ошибка авторизации';
     }
@@ -25,7 +25,7 @@ if (!empty($_POST)) {
     <?= $error ?>
 </span>
 <?php endif; ?>
-<form action="/login.php" method="post">
+<form action="/phpForBeginner/login.php" method="post">
     <label for="login">Имя пользователя: </label>
     <input type="text" name="login" id="login">
     <br>
