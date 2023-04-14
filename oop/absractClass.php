@@ -1,6 +1,6 @@
 <?php
 abstract class AbstractClass{
-    abstract public function getValue();
+    abstract public function getValue(); //просто объявление методов, которые дб реализованы в дочерних классах
 
     public function printValue()
     {
@@ -63,9 +63,10 @@ class EnglishHuman extends HumanAbstract{
 //$object = new classA(45);
 //$object -> printValue();
 
-$humaR = new RussianHuman('Иван');
 
-$humaE = new EnglishHuman('Ivan');
-
-echo $humaR->introduceYourself().PHP_EOL;
-echo $humaE->introduceYourself();
+//$humaR = new RussianHuman('Иван');
+//
+//$humaE = new EnglishHuman('Ivan');
+//
+//echo $humaR->introduceYourself().PHP_EOL;
+//echo $humaE->introduceYourself();
