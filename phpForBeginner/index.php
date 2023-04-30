@@ -11,7 +11,7 @@ foreach($files as $fileName){
     if($fileName === '.' || $fileName === '..'){
         continue;
     }
-    $links [] = 'http://mylearn.loc/phpForBeginner/uploads/' . $fileName;
+    $links [] = 'http://PHP-learn/phpForBeginner/uploads/' . $fileName;
 }
 
     foreach ($links as $link):?>

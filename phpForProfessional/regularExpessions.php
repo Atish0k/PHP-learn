@@ -1,10 +1,10 @@
 <?php
-//preg_match('/шаблон для поиска/', 'строка, в которой ищем совпадения по шаблону', $matches);
-////найдем слово век в строке человек
-//$pattern = '/век/';
-//$string = 'человек';
-//preg_match($pattern, $string, $matches);
-//var_dump($matches);
+preg_match('/шаблон для поиска/', 'строка, в которой ищем совпадения по шаблону', $matches);
+//найдем слово век в строке человек
+$pattern = '/век/';
+$string = 'человек';
+preg_match($pattern, $string, $matches);
+var_dump($matches);
 
 //$pattern = '/Меняем автора статьи ([0-9]+) с "(.+)" на "(.+)"/';
 //$str = 'Меняем автора статьи 123 с "Иван" на "Пётр"';
@@ -22,12 +22,12 @@
 //$articleId = $matches['articleId'];
 
 //DZ
-$pattern = '/\/([a-zA-Z]+)\/([0-9]+)/';
-$url = '/post/892';
-preg_match($pattern,$url,$matches);
-var_dump($matches);
-$controller = $matches[1];
-$id = $matches[2];
-echo $controller . ' ' . $id;
+//$pattern = '/\/([a-zA-Z]+)\/([0-9]+)/';
+//$url = '/post/892';
+//preg_match($pattern,$url,$matches);
+//var_dump($matches);
+//$controller = $matches[1];
+//$id = $matches[2];
+//echo $controller . ' ' . $id;
 
 
