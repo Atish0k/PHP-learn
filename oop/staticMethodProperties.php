@@ -39,7 +39,7 @@ class Human{
 B::$x = 7;
 $obj = new B();
 echo $obj::$x;
-echo $obj->getX();
+echo $obj->getX().PHP_EOL;
 
 $hum1 = new Human();
 $hum2 = new Human();
